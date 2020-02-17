@@ -1,0 +1,27 @@
+{
+  "name": "Weather-App",
+  "version": "1.0.0",
+  "description": "This app is a weather forecast site using the weather API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/damiecode/Weather-App.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/damiecode/Weather-App/issues"
+  },
+  "homepage": "https://github.com/damiecode/Weather-App#readme",
+  "devDependencies": {
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  }
+}
