@@ -100,6 +100,65 @@ body {
   min-height: 40px;
 }
 
+.second-section {
+  margin: 50px 0 20px;
+}
+
+.second-section .cities {
+  grid-gap: 32px 20px;
+}
+
+.second-section .city {
+  position: relative;
+  padding: 40px 10%;
+  border-radius: 20px;
+  background: var(--text_light);
+  color: var(--text_med);
+}
+
+.second-section .city::after {
+  content: ’’;
+  width: 90%;
+  height: 50px;
+  position: absolute;
+  bottom: -12px;
+  left: 5%;
+  z-index: -1;
+  opacity: 0.3;
+  border-radius: 20px;
+  background: var(--text_light);
+}
+
+.second-section figcaption {
+  margin-top: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.second-section .city-temp {
+  font-size: 5rem;
+  font-weight: bold;
+  margin-top: 10px;
+  color: var(--text_dark);
+}
+
+.second-section .city sup {
+  font-size: 0.5em;
+}
+
+.second-section .city-name sup {
+  padding: 0.2em 0.6em;
+  border-radius: 30px;
+  color: var(--text_light);
+  background: var(--orange);
+}
+
+.second-section .city-icon {
+  margin-top: 10px;
+  width: 100px;
+  height: 100px;
+}
+
 @media screen and (max-width: 700px) {
   .first-section form {
     flex-direction: column;
