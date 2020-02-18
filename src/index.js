@@ -17,9 +17,10 @@ const displayWeather = (data) => {
   const { cod, main, name, sys, weather } = data;
   if (cod === 200) {
     msg.style.display = 'none';
+    section.style.display = 'block';
     const icon = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${
       weather[0].icon
-    }.svg`;
+      }.svg`;
     city.classList.add('city');
     h2.setAttribute('data-name', `${name} ${sys.country}`);
     cityName.innerHTML = `${name}`;
@@ -34,10 +35,19 @@ const displayWeather = (data) => {
     img.src = icon;
     img.alt = `${weather[0].description}`;
     caption.innerHTML = `${weather[0].description}`;
+    const div = document.getElementById('background');
+    console.log(div)
+    div.classList = '';
+    if (caption.innerHTML.includes('rain')) {
+      div.classList.add('rainyday');
+    } else if (caption.innerHTML.includes('haze') || caption.innerHTML.includes('cloud')) {
+      div.classList.add('cloudyday')
+    } else {
+      div.classList.add("clearday");
+    }
   } else {
     msg.style.display = 'block';
     section.style.display = 'none';
-    form.reset();
   }
   form.reset();
   input.focus();
@@ -69,7 +79,6 @@ const convertTemperature = () => {
     changeTemp.innerHTML = 'Change temperature to °C';
   }
 };
-
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();

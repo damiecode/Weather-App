@@ -167,6 +167,18 @@ figure {
   margin-left: 50px;
 }
 
+.rainyday {
+  background-image: url('https://media.giphy.com/media/1225Tuw5X5By5W/giphy.gif');
+}
+
+.clearday {
+  background-image: url('https://media.giphy.com/media/ruknycEXRhOs8/giphy.gif');
+}
+
+.cloudyday {
+  background-image: url('https://media.giphy.com/media/aQ7kognlRPDzi/giphy.gif');
+}
+
 @media screen and (max-width: 700px) {
   .first-section form {
     flex-direction: column;
