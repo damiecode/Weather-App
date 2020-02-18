@@ -55,9 +55,10 @@ const displayWeather = (data) => {
   input.value = '';
 };
 
-const handle = (promise) => { return promise
-    .then(data => ([data, undefined]))
-    .catch(error => Promise.resolve([undefined, error]));
+const handle = (promise) => {
+  (promise)
+  .then(data => ([data, undefined]))
+  .catch(error => Promise.resolve([undefined, error]));
 };
 
 const getWeather = async (searchValue) => {
