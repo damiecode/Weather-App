@@ -14,7 +14,9 @@ const caption = document.getElementById('caption');
 let tempHolder = 0;
 
 const displayWeather = (data) => {
-  const { cod, main, name, sys, weather } = data;
+  const {
+    cod, main, name, sys, weather
+  } = data;
   if (cod === 200) {
     msg.style.display = 'none';
     section.style.display = 'block';
@@ -53,8 +55,7 @@ const displayWeather = (data) => {
   input.value = '';
 };
 
-const handle = (promise) => {
-  return promise
+const handle = (promise) => { return promise
     .then(data => ([data, undefined]))
     .catch(error => Promise.resolve([undefined, error]));
 };
