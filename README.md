@@ -2,7 +2,7 @@
 <br>
 
 <p>
-  <a href="https://raw.githack.com/ebukaume/todo-list/master/dist/index.html" target="_blank">
+  <a href="https://github.com/damiecode/Weather-App/blob/feature/weatherApp/dist/index.html" target="_blank">
     <img alt="Website" src="weather.png" />
   </a>
 </p>
