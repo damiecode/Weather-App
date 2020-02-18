@@ -16,8 +16,8 @@ const displayWeather = (data) => {
   if (data.cod === '200') {
     msg.style.display = 'none';
     const icon = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${
-      data.list[0].weather[0]['icon']
-      }.svg`;
+      data.list[0].weather[0].icon
+    }.svg`;
     city.classList.add('city');
     h2.setAttribute('data-name', data.city.name, data.city.country)
     name.innerHTML = data.city.name;
@@ -30,8 +30,8 @@ const displayWeather = (data) => {
     tempHolder = data.list[0].main.temp.toFixed(2);
     temp.innerHTML = `${data.list[0].main.temp} °C`;
     img.src = icon;
-    img.alt = data.list[0].weather[0]['description'];
-    caption.innerHTML = data.list[0].weather[0]['description'];
+    img.alt = data.list[0].weather[0].description;
+    caption.innerHTML = data.list[0].weather[0].description;
   } else {
     msg.style.display = 'block';
   }
@@ -59,7 +59,7 @@ const convertTemperature = () => {
 };
 
 
-form.addEventListener('submit', e => {
+form.addEventListener('submit', (e) => {
   e.preventDefault();
   getWeather(input.value);
 });
