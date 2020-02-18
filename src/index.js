@@ -19,7 +19,7 @@ const displayWeather = (data) => {
     main,
     name,
     sys,
-    weather
+    weather,
   } = data;
   if (cod === 200) {
     msg.style.display = 'none';
