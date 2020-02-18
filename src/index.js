@@ -15,7 +15,11 @@ let tempHolder = 0;
 
 const displayWeather = (data) => {
   const {
-    cod, main, name, sys, weather
+    cod,
+    main,
+    name,
+    sys,
+    weather
   } = data;
   if (cod === 200) {
     msg.style.display = 'none';
@@ -57,8 +61,8 @@ const displayWeather = (data) => {
 
 const handle = (promise) => {
   (promise)
-  .then(data => ([data, undefined]))
-  .catch(error => Promise.resolve([undefined, error]));
+    .then(data => ([data, undefined]))
+    .catch(error => Promise.resolve([undefined, error]));
 };
 
 const getWeather = async (searchValue) => {
