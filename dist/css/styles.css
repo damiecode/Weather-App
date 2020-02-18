@@ -73,7 +73,7 @@ body {
   height: 40px;
   padding: 5px 5px 10px;
   border-bottom: 1px solid;
-
+  text-align: center;
 }
 
 .first-section form input::placeholder {
