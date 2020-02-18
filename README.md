@@ -24,7 +24,7 @@ The full project requirements can be found [here](https://www.theodinproject.com
 - npm
 - webpack
 
-### ✨ [Live Demo](https://rawcdn.githack.com/damiecode/Weather-App/feature/todo/dist/index.html)
+### ✨ [Live Demo](https://github.com/damiecode/Weather-App/blob/feature/weatherApp/dist/index.html)
 
 ## Usage
 
