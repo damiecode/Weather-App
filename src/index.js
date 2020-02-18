@@ -19,10 +19,10 @@ const displayWeather = (data) => {
       data.list[0].weather[0].icon
     }.svg`;
     city.classList.add('city');
-    h2.setAttribute('data-name', data.city.name, data.city.country)
+    h2.setAttribute('data-name', data.city.name, data.city.country);
     name.innerHTML = data.city.name;
     country.innerHTML = data.city.country;
-    country.classList.add('data-country')
+    country.classList.add('data-country');
     changeTemp.innerHTML = 'Change temperature to °F';
     changeTemp.classList.add('temp-btn');
     unit.classList.add('unit');
