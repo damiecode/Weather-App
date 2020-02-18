@@ -16,13 +16,24 @@
       <form id="search-form">
         <input type="text" placeholder="Search for a city" autofocus>
         <button type="submit">Search</button>
-        <span class="msg"></span>
+        <span class="msg" id="msg">Please insert a valid city</span>
       </form>
     </div>
   </section>
   <section>
     <div class="container second-section">
-      <ul class="cities"></ul>
+      <div id="city">
+        <h2 class="city-name">
+          <span class="data-name"></span>
+          <sup id="data-country"></sup>
+        </h2>
+        <div class="city-temp" id="city-temp"><sup id="unit"></sup></div>
+        <button id="change-temp"></button>
+        <figure>
+          <img class="city-icon">
+          <figcaption id="caption"></figcaption>
+        </figure>
+      </div>
     </div>
   </section>
   <script src="./main.js"></script>

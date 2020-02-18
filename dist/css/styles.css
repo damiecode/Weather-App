@@ -35,6 +35,7 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+  margin-left: 39%;
 }
 
 ul {
@@ -51,6 +52,7 @@ body {
 
 .first-section {
   color: var(--text_light);
+  text-align: center;
 }
 
 .heading {
@@ -63,7 +65,7 @@ body {
 .first-section form {
   position: relative;
   display: flex;
-  align-items: center;
+  justify-content: center;
 }
 
 .first-section form input {
@@ -71,6 +73,7 @@ body {
   height: 40px;
   padding: 5px 5px 10px;
   border-bottom: 1px solid;
+
 }
 
 .first-section form input::placeholder {
@@ -98,25 +101,25 @@ body {
   left: 0;
   max-width: 450px;
   min-height: 40px;
+  display: none;
+  background: var(--darkred);
+  color: var(--text_light);
 }
 
 .second-section {
   margin: 50px 0 20px;
 }
 
-.second-section .cities {
-  grid-gap: 32px 20px;
-}
-
-.second-section .city {
+.city {
   position: relative;
-  padding: 40px 10%;
+  padding: 20px 5%;
   border-radius: 20px;
   background: var(--text_light);
   color: var(--text_med);
+  text-align: center;
 }
 
-.second-section .city::after {
+.city::after {
   content: ’’;
   width: 90%;
   height: 50px;
@@ -142,21 +145,12 @@ body {
   color: var(--text_dark);
 }
 
-.second-section .city sup {
-  font-size: 0.5em;
-}
-
-.second-section .city-name sup {
+.data-country {
   padding: 0.2em 0.6em;
   border-radius: 30px;
   color: var(--text_light);
   background: var(--orange);
-}
-
-.second-section .cities {
-  display: grid;
-  grid-gap: 32px 20px;
-  grid-template-columns: repeat(4, 1fr);
+  font-size: 0.5em;
 }
 
 .temp-btn {
@@ -167,6 +161,10 @@ body {
   margin-left: 5px;
   border-radius: 5px;
   background: var(--orange);
+}
+
+figure {
+  margin-left: 50px;
 }
 
 @media screen and (max-width: 700px) {
@@ -188,21 +186,5 @@ body {
     max-width: none;
     min-height: 0;
     margin-top: 10px;
-  }
-
-  .second-section .cities {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media screen and (max-width: 1000px) {
-  .second-section .cities {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .second-section .cities {
-    grid-template-columns: repeat(1, 1fr);
   }
 }
