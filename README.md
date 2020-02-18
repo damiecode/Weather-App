@@ -2,7 +2,7 @@
 <br>
 
 <p>
-  <a href="https://github.com/damiecode/Weather-App/blob/feature/weatherApp/dist/index.html" target="_blank">
+  <a href="https://rawcdn.githack.com/damiecode/Weather-App/feature/weatherApp/dist/index.html" target="_blank">
     <img alt="Website" src="weather.png" />
   </a>
 </p>
@@ -24,7 +24,7 @@ The full project requirements can be found [here](https://www.theodinproject.com
 - npm
 - webpack
 
-### ✨ [Live Demo](https://github.com/damiecode/Weather-App/blob/feature/weatherApp/dist/index.html)
+### ✨ [Live Demo](https://rawcdn.githack.com/damiecode/Weather-App/feature/weatherApp/dist/index.html)
 
 ## Usage
 
