@@ -32,12 +32,12 @@ const displayWeather = (data) => {
     cityName.innerHTML = `${name}`;
     country.innerHTML = `${sys.country}`;
     country.classList.add('data-country');
-    changeTemp.innerHTML = 'Change temperature to °F';
+    changeTemp.innerHTML = 'Change temperature to °C';
     changeTemp.classList.add('temp-btn');
     unit.classList.add('unit');
-    unit.innerText = '°C';
+    unit.innerText = '°F';
     tempHolder = main.temp.toFixed(2);
-    temp.innerHTML = `${main.temp} °C`;
+    temp.innerHTML = `${main.temp} °F`;
     img.src = icon;
     img.alt = `${weather[0].description}`;
     caption.innerHTML = `${weather[0].description}`;
@@ -60,28 +60,36 @@ const displayWeather = (data) => {
 };
 
 const handle = (promise) => {
-  (promise)
+  return promise
     .then(data => ([data, undefined]))
     .catch(error => Promise.resolve([undefined, error]));
 };
 
-const getWeather = async (searchValue) => {
-  const [response, responseErr] = await handle(fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&appid=7cf4ed0e4a1eb8c3cb4dfe318b6205c9&units=metric`));
-  if (responseErr) throw new Error('could not fetch API');
-  const [weatherJSON, weatherErr] = await handle(response.json());
-  if (weatherErr) throw new Error('could not fetch weather');
-  displayWeather(weatherJSON);
-};
-
 const convertTemperature = () => {
+  let searchValue = cityName.innerText;
   if (temp.innerHTML.includes('°F')) {
-    tempHolder = (tempHolder - 32) * (5 / 9);
-    temp.innerHTML = `${tempHolder.toFixed(2)}<sup>°C</sup>`;
+    units = 1;
+    getWeather(searchValue, units);
     changeTemp.innerHTML = 'Change temperature to °F';
   } else if (temp.innerHTML.includes('°C')) {
-    tempHolder = (tempHolder * (9 / 5)) + 32;
-    temp.innerHTML = `${tempHolder.toFixed(2)}<sup>°F</sup>`;
+    getWeather(searchValue, units);
     changeTemp.innerHTML = 'Change temperature to °C';
+  }
+};
+
+const getWeather = async (searchValue, units) => {
+  if (units == 1) {
+    const [response, responseErr] = await handle(fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&appid=7cf4ed0e4a1eb8c3cb4dfe318b6205c9&units=metric`));
+    if (responseErr) throw new Error('could not fetch API');
+    const [weatherJSON, weatherErr] = await handle(response.json());
+    if (weatherErr) throw new Error('could not fetch weather');
+    displayWeather(weatherJSON);
+  } else {
+    const [response, responseErr] = await handle(fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&appid=7cf4ed0e4a1eb8c3cb4dfe318b6205c9&units=imperial`));
+    if (responseErr) throw new Error('could not fetch API');
+    const [weatherJSON, weatherErr] = await handle(response.json());
+    if (weatherErr) throw new Error('could not fetch weather');
+    displayWeather(weatherJSON);
   }
 };
 
@@ -91,6 +99,5 @@ form.addEventListener('submit', (e) => {
 });
 
 changeTemp.addEventListener('click', (e) => {
-  e.preventDefault();
   convertTemperature();
 });
