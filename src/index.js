@@ -39,7 +39,7 @@ const displayWeather = (data) => {
     unit.classList.add('unit');
     unit.innerText = `${deg}`;
     tempHolder = main.temp.toFixed(2);
-    temp.innerHTML = `${main.temp}${deg}`;
+    temp.innerHTML = `${tempHolder}${deg}`;
     img.src = icon;
     img.alt = `${weather[0].description}`;
     caption.innerHTML = `${weather[0].description}`;
@@ -90,11 +90,11 @@ const convertTemperature = () => {
     units = 1;
     getWeather(searchValue, units);
     deg = '°F';
-    changeTemp.innerHTML = 'Change temperature to °C';
+    changeTemp.innerText = 'Change temperature to °C';
   } else if (temp.innerHTML.includes('°C')) {
     getWeather(searchValue, units);
     deg = '°C';
-    changeTemp.innerHTML = 'Change temperature to °F';
+    changeTemp.innerText = 'Change temperature to °F';
   }
 };
 
