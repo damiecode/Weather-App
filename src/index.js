@@ -59,6 +59,7 @@ const displayWeather = (data) => {
   form.reset();
   input.focus();
   input.value = '';
+  deg = '°F';
 };
 
 const handle = (promise) => {
@@ -74,12 +75,14 @@ const getWeather = async (searchValue, units) => {
     const [weatherJSON, weatherErr] = await handle(response.json());
     if (weatherErr) throw new Error('could not fetch weather');
     displayWeather(weatherJSON);
+    changeTemp.innerText = 'Change temperature to °F';
   } else {
     const [response, responseErr] = await handle(fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&appid=7cf4ed0e4a1eb8c3cb4dfe318b6205c9&units=imperial`));
     if (responseErr) throw new Error('could not fetch API');
     const [weatherJSON, weatherErr] = await handle(response.json());
     if (weatherErr) throw new Error('could not fetch weather');
     displayWeather(weatherJSON);
+    changeTemp.innerText = 'Change temperature to °C';
   }
 };
 
@@ -89,12 +92,12 @@ const convertTemperature = () => {
   if (temp.innerHTML.includes('°F')) {
     units = 1;
     getWeather(searchValue, units);
-    deg = '°F';
-    changeTemp.innerText = 'Change temperature to °C';
-  } else if (temp.innerHTML.includes('°C')) {
-    getWeather(searchValue, units);
     deg = '°C';
     changeTemp.innerText = 'Change temperature to °F';
+  } else if (temp.innerHTML.includes('°C')) {
+    getWeather(searchValue, units);
+    deg = '°F';
+    changeTemp.innerText = 'Change temperature to °C';
   }
 };
 form.addEventListener('submit', (e) => {
