@@ -1,5 +1,3 @@
-/* eslint arrow-body-style: ["error", "as-needed", { "requireReturnForObjectLiteral": true }] */
-
 const section = document.getElementById('second-section');
 const form = document.querySelector('#search-form');
 const input = document.querySelector('#search-form input');
@@ -63,7 +61,7 @@ const displayWeather = (data) => {
 };
 
 const handle = (promise) => {
-  return promise
+  return promise /* eslint arrow-body-style: ["error", "as-needed", { "requireReturnForObjectLiteral": true }] */
     .then(data => ([data, undefined]))
     .catch(error => Promise.resolve([undefined, error]));
 };
