@@ -1,4 +1,5 @@
-/*eslint arrow-body-style: ["error", "as-needed"]*/
+/* eslint arrow-body-style: ["error", "as-needed"] */
+
 const section = document.getElementById('second-section');
 const form = document.querySelector('#search-form');
 const input = document.querySelector('#search-form input');
@@ -28,7 +29,7 @@ const displayWeather = (data) => {
     section.style.display = 'block';
     const icon = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${
       weather[0].icon
-    }.svg`;
+      }.svg`;
     city.classList.add('city');
     h2.setAttribute('data-name', `${name} ${sys.country}`);
     cityName.innerHTML = `${name}`;
@@ -62,7 +63,7 @@ const displayWeather = (data) => {
 };
 
 const handle = (promise) => {
-  return promise 
+  return promise
     .then(data => ([data, undefined]))
     .catch(error => Promise.resolve([undefined, error]));
 };
