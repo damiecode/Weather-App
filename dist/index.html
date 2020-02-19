@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Weather App</title>
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+  <div id="background">
+    <section class="first-section">
+      <div class="container">
+        <h1 class="heading">Weather Forecast App</h1>
+        <form id="search-form">
+          <input type="text" placeholder="Search for a city" autofocus>
+          <button type="submit">Search</button>
+          <span class="msg" id="msg">Please insert a valid city</span>
+        </form>
+      </div>
+    </section>
+    <section>
+      <div class="container second-section" id='second-section'>
+        <div id="city">
+          <h2 class="city-name">
+            <span class="data-name"></span>
+            <sup id="data-country"></sup>
+          </h2>
+          <div class="city-temp" id="city-temp"><sup id="unit"></sup></div>
+          <button id="change-temp">Chnage temperature to °C</button>
+          <figure>
+            <img class="city-icon">
+            <figcaption id="caption"></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script src="./main.js"></script>
+</body>
+<html>
