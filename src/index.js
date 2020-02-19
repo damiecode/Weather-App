@@ -35,7 +35,6 @@ const displayWeather = (data) => {
     cityName.innerHTML = `${name}`;
     country.innerHTML = `${sys.country}`;
     country.classList.add('data-country');
-    // changeTemp.innerHTML = 'Change temperature';
     changeTemp.classList.add('temp-btn');
     unit.classList.add('unit');
     unit.innerText = `${deg}`;
