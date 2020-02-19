@@ -12,6 +12,7 @@ const img = document.querySelector('.city-icon');
 const unit = document.getElementById('unit');
 const caption = document.getElementById('caption');
 let tempHolder = 0;
+let deg = '°F';
 
 const displayWeather = (data) => {
   const {
@@ -37,7 +38,7 @@ const displayWeather = (data) => {
     unit.classList.add('unit');
     unit.innerText = '°F';
     tempHolder = main.temp.toFixed(2);
-    temp.innerHTML = `${main.temp} °F`;
+    temp.innerHTML = `${main.temp}${deg}`;
     img.src = icon;
     img.alt = `${weather[0].description}`;
     caption.innerHTML = `${weather[0].description}`;
@@ -86,12 +87,13 @@ const convertTemperature = () => {
   let units = 0;
   if (temp.innerHTML.includes('°F')) {
     units = 1;
-    console.log('got farenheit');
     getWeather(searchValue, units);
-    changeTemp.innerHTML = 'Change temperature to °C';
+    deg = '°C';
+    changeTemp.innerHTML = 'Change temperature to °F';
   } else if (temp.innerHTML.includes('°C')) {
     getWeather(searchValue, units);
-    changeTemp.innerHTML = 'Change temperature to °F';
+    deg = '°F';
+    changeTemp.innerHTML = 'Change temperature to °C';
   }
 };
 
