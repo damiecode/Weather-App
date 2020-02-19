@@ -29,13 +29,13 @@ const displayWeather = (data) => {
     section.style.display = 'block';
     const icon = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${
       weather[0].icon
-      }.svg`;
+    }.svg`;
     city.classList.add('city');
     h2.setAttribute('data-name', `${name} ${sys.country}`);
     cityName.innerHTML = `${name}`;
     country.innerHTML = `${sys.country}`;
     country.classList.add('data-country');
-    changeTemp.innerHTML = 'Change temperature to °C';
+    // changeTemp.innerHTML = 'Change temperature';
     changeTemp.classList.add('temp-btn');
     unit.classList.add('unit');
     unit.innerText = `${deg}`;
