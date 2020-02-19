@@ -89,12 +89,12 @@ const convertTemperature = () => {
   if (temp.innerHTML.includes('°F')) {
     units = 1;
     getWeather(searchValue, units);
-    deg = '°F';
-    changeTemp.innerText = 'Change temperature to °C';
-  } else if (temp.innerHTML.includes('°C')) {
-    getWeather(searchValue, units);
     deg = '°C';
     changeTemp.innerText = 'Change temperature to °F';
+  } else if (temp.innerHTML.includes('°C')) {
+    getWeather(searchValue, units);
+    deg = '°F';
+    changeTemp.innerText = 'Change temperature to °C';
   }
 };
 
