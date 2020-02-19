@@ -1,4 +1,4 @@
-/* eslint disble arrow-body-style: ["error", "as-needed", { "requireReturnForObjectLiteral": true }] */
+/* eslint arrow-body-style: ["error", "as-needed", { "requireReturnForObjectLiteral": true }] */
 
 const section = document.getElementById('second-section');
 const form = document.querySelector('#search-form');
