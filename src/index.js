@@ -84,15 +84,15 @@ const getWeather = async (searchValue, units) => {
 
 const convertTemperature = () => {
   const searchValue = cityName.innerText;
+  let units = 0;
   if (temp.innerHTML.includes('°F')) {
     units = 1;
     getWeather(searchValue, units);
-    deg = '°F';
+    deg = '°C';
     changeTemp.innerHTML = 'Change temperature to °F';
   } else if (temp.innerHTML.includes('°C')) {
-    units = 0;
     getWeather(searchValue, units);
-    deg = '°C';
+    deg = '°F';
     changeTemp.innerHTML = 'Change temperature to °C';
   }
 };
@@ -103,5 +103,6 @@ form.addEventListener('submit', (e) => {
 });
 
 changeTemp.addEventListener('click', (e) => {
+  ev.preventDefault();
   convertTemperature();
 });
