@@ -1,3 +1,5 @@
+/* eslint-disable arrow-body-style */
+
 const section = document.getElementById('second-section');
 const form = document.querySelector('#search-form');
 const input = document.querySelector('#search-form input');
