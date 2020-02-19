@@ -61,7 +61,7 @@ const displayWeather = (data) => {
 };
 
 const handle = (promise) => {
-  return promise
+  return promise 
     .then(data => ([data, undefined]))
     .catch(error => Promise.resolve([undefined, error]));
 };
@@ -88,12 +88,12 @@ const convertTemperature = () => {
   if (temp.innerHTML.includes('°F')) {
     units = 1;
     getWeather(searchValue, units);
-    deg = '°C';
-    changeTemp.innerHTML = 'Change temperature to °F';
-  } else if (temp.innerHTML.includes('°C')) {
-    getWeather(searchValue, units);
     deg = '°F';
     changeTemp.innerHTML = 'Change temperature to °C';
+  } else if (temp.innerHTML.includes('°C')) {
+    getWeather(searchValue, units);
+    deg = '°C';
+    changeTemp.innerHTML = 'Change temperature to °F';
   }
 };
 
@@ -103,6 +103,6 @@ form.addEventListener('submit', (e) => {
 });
 
 changeTemp.addEventListener('click', (e) => {
-  ev.preventDefault();
+  e.preventDefault();
   convertTemperature();
 });
