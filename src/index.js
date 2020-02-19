@@ -36,7 +36,7 @@ const displayWeather = (data) => {
     changeTemp.innerHTML = 'Change temperature to °C';
     changeTemp.classList.add('temp-btn');
     unit.classList.add('unit');
-    unit.innerText = '°F';
+    unit.innerText = `${deg}`;
     tempHolder = main.temp.toFixed(2);
     temp.innerHTML = `${main.temp}${deg}`;
     img.src = icon;
