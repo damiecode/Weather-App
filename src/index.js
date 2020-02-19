@@ -1,3 +1,4 @@
+/*eslint arrow-body-style: ["error", "as-needed"]*/
 const section = document.getElementById('second-section');
 const form = document.querySelector('#search-form');
 const input = document.querySelector('#search-form input');
@@ -6,7 +7,7 @@ const city = document.querySelector('#city');
 const h2 = document.querySelector('.city-name');
 const cityName = document.querySelector('.data-name');
 const country = document.querySelector('#data-country');
-const changeTemp = document.querySelector('#change-temp');
+const changeTemp = document.getElementById('change-temp');
 const temp = document.getElementById('city-temp');
 const img = document.querySelector('.city-icon');
 const unit = document.getElementById('unit');
