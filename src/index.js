@@ -60,10 +60,8 @@ const displayWeather = (data) => {
   deg = '°F';
 };
 
-const handle = (promise) => {
-  return promise /* eslint arrow-body-style: ["error", "as-needed", { "requireReturnForObjectLiteral": true }] */
-    .then(data => ([data, undefined]))
-    .catch(error => Promise.resolve([undefined, error]));
+const handle = promise => {
+  return promise.then(data => [data, undefined]).catch(error => Promise.resolve([undefined, error]));
 };
 
 const getWeather = async (searchValue, units) => {
