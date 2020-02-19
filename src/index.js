@@ -67,7 +67,7 @@ const handle = (promise) => {
 };
 
 const getWeather = async (searchValue, units) => {
-  if (units == 1) {
+  if (units === 1) {
     const [response, responseErr] = await handle(fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&appid=7cf4ed0e4a1eb8c3cb4dfe318b6205c9&units=metric`));
     if (responseErr) throw new Error('could not fetch API');
     const [weatherJSON, weatherErr] = await handle(response.json());
@@ -83,17 +83,16 @@ const getWeather = async (searchValue, units) => {
 };
 
 const convertTemperature = () => {
-  let searchValue = cityName.innerText;
-  let units = 0;
+  const searchValue = cityName.innerText;
   if (temp.innerHTML.includes('°F')) {
     units = 1;
     getWeather(searchValue, units);
     deg = '°C';
-    changeTemp.innerHTML = 'Change temperature to °F';
+    changeTemp.innerHTML = 'Change temperature to °C';
   } else if (temp.innerHTML.includes('°C')) {
     getWeather(searchValue, units);
     deg = '°F';
-    changeTemp.innerHTML = 'Change temperature to °C';
+    changeTemp.innerHTML = 'Change temperature to °F';
   }
 };
 
