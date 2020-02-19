@@ -37,7 +37,7 @@ $ git clone https://github.com/damiecode/Weather-App.git
 > cd into the directory, install dependencies, build and start
 
 ```sh
-$ cd todo-list
+$ cd Weather-App
 $ npm install
 $ npm run build
 $ npm run start
