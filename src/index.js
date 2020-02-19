@@ -65,18 +65,6 @@ const handle = (promise) => {
     .catch(error => Promise.resolve([undefined, error]));
 };
 
-const convertTemperature = () => {
-  let searchValue = cityName.innerText;
-  if (temp.innerHTML.includes('°F')) {
-    units = 1;
-    getWeather(searchValue, units);
-    changeTemp.innerHTML = 'Change temperature to °F';
-  } else if (temp.innerHTML.includes('°C')) {
-    getWeather(searchValue, units);
-    changeTemp.innerHTML = 'Change temperature to °C';
-  }
-};
-
 const getWeather = async (searchValue, units) => {
   if (units == 1) {
     const [response, responseErr] = await handle(fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&appid=7cf4ed0e4a1eb8c3cb4dfe318b6205c9&units=metric`));
@@ -90,6 +78,20 @@ const getWeather = async (searchValue, units) => {
     const [weatherJSON, weatherErr] = await handle(response.json());
     if (weatherErr) throw new Error('could not fetch weather');
     displayWeather(weatherJSON);
+  }
+};
+
+const convertTemperature = () => {
+  let searchValue = cityName.innerText;
+  let units = 0;
+  if (temp.innerHTML.includes('°F')) {
+    units = 1;
+    console.log('got farenheit');
+    getWeather(searchValue, units);
+    changeTemp.innerHTML = 'Change temperature to °C';
+  } else if (temp.innerHTML.includes('°C')) {
+    getWeather(searchValue, units);
+    changeTemp.innerHTML = 'Change temperature to °F';
   }
 };
 
