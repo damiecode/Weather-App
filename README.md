@@ -11,8 +11,7 @@
 
 This project is part of a series of projects to be completed by students of [Microverse](https://www.microverse.org/ 'The Global School for Remote Software Developers!').
 
- Weather app created using vanilla JS, connects to Open-weather and Ipfind APIs, and dynamically renders weather data -in Metric and Imperial units- for clients city or other cities chosen with the search form.
- The search form uses a modified list from OpenWeather to suggest and validate the user's input.
+ A weather app created using vanilla JS. The app connects to the OpenWeather and IP Find APIs, and dynamically renders weather data (in Metric and Imperial units) for the user's city, or any other cities chosen with the search form. The search form uses a modified list from the OpenWeather to suggest and validate the user's input.
 
 The full project requirements can be found [here](https://www.theodinproject.com/courses/javascript/lessons/weather-app).
 
@@ -61,6 +60,10 @@ Contributions, issues and feature requests are welcome!<br />Feel free to check 
 3. Commit your changes (git commit -am 'what this commit will fix/add/improve')
 4. Push to the branch (git push origin [chosen-name])
 5. Create a new Pull Request
+
+## Future features
+- Users will be able to see previously searched histories.
+- News from cities searched can be viewed.
 
 ## Show your support
 
